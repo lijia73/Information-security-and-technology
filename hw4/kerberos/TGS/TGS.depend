@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1607689968 source:/home/lijia/Desktop/iss/TGS/des.c
+	<string.h>
+	<memory.h>
+	<stdlib.h>
+	<stdio.h>
+
+1607748762 source:/home/lijia/Desktop/iss/TGS/main.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/msg.h>
+	<string.h>
+	<time.h>
+	"des.h"
+
+1607689968 /home/lijia/Desktop/iss/TGS/des.h
+

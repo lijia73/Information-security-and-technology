@@ -1,0 +1,9 @@
+﻿  hmac_md5.c
+  main.c
+E:\学习\大三上\信息安全与技术\hw3\HMAC-MD5\main.c(108,17): warning C4013: “hmac_md5”未定义；假设外部返回 int
+E:\学习\大三上\信息安全与技术\hw3\HMAC-MD5\main.c(63,1): warning C4047: “初始化”:“unsigned int *”与“int”的间接级别不同
+E:\学习\大三上\信息安全与技术\hw3\HMAC-MD5\main.c(73,1): warning C4047: “初始化”:“unsigned int *”与“int”的间接级别不同
+  md5.c
+E:\学习\大三上\信息安全与技术\hw3\HMAC-MD5\md5.c(80,9): warning C4013: “memcpy”未定义；假设外部返回 int
+  正在生成代码...
+  HMAC-MD5.vcxproj -> E:\学习\大三上\信息安全与技术\hw3\HMAC-MD5\Debug\HMAC-MD5.exe

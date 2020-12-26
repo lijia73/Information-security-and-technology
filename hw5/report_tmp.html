@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ipsec-%E4%BC%A0%E8%BE%93%E6%A8%A1%E5%BC%8F%E4%B8%8B-esp-%E6%8A%A5%E6%96%87%E7%9A%84%E8%A3%85%E5%8C%85%E4%B8%8E%E6%8B%86%E5%8C%85%E8%BF%87%E7%A8%8B">IPSec 传输模式下 ESP 报文的装包与拆包过程</h1>
+<h2 id="ipsec">IPSec</h2>
+<p>IPSec是互联网安全协议（Internet Protocol Security）的缩写，是一个网络传输协议族，通过对IP协议的分组进行加密和认证来保护IP协议；</p>
+<p>IPsec主要由以下协议组成：
+一、<strong>认证头（AH）</strong>，为IP数据报提供无连接数据完整性、消息认证以及防重放攻击保护；
+二、<strong>封装安全载荷（ESP）</strong>，提供机密性、数据源认证、无连接完整性、防重放和有限的传输流（traffic-flow）机密性；
+三、<strong>安全关联（SA）</strong>，提供算法和数据包，提供AH、ESP操作所需的参数。
+四、<strong>密钥协议（IKE）</strong>，提供对称密码的钥匙的生存和交换。</p>
+<p>IPsec 对数据进行加密的方式有两种：传输模式和隧道模式。</p>
+<ul>
+<li><strong>传输模式</strong>只对 IP 协议报文的有效数据载荷部分 (payload) 进行加密，因此需要对原始 IP 报文进行拆装。</li>
+<li><strong>隧道模式</strong>对整个 IP 协议报文进行加密，相当于把原始 IP 报文封装在一个安全的隧道进行传输，保持了原始 IP 报文的完整性。</li>
+</ul>
+<h2 id="esp-%E6%8A%A5%E6%96%87%E5%B0%81%E8%A3%85%E7%BB%93%E6%9E%84">ESP 报文封装结构</h2>
+<p>传输模式下，原始IP报文被拆解，在其有效载荷前面加上新的ES协议头，再装回原来的IP地址，形成新的IPsec报文。<strong>新IP头保存ESP协议类型50</strong>，其报文结构如下图所示。</p>
+<p><img src="file:///e:/学习/大三上/信息安全与技术/hw5/img/1.png" alt=""></p>
+<h2 id="%E8%A3%85%E5%8C%85%E8%BF%87%E7%A8%8B">装包过程</h2>
+<p><img src="file:///e:/学习/大三上/信息安全与技术/hw5/img/2.png" alt=""></p>
+<ol>
+<li>取出原IP头，修改协议号为 50，标识这是一个ESP报文，并把加密算法、验证算法 、共享会话密钥 、密钥使用期限等信息放进 SA。</li>
+<li>根据 IP 头修改的数据，在原 IP 数据报文末尾添加ESP尾（ESP Trailer）,包括<strong>Padding、Pad Length、Next Header</strong>。</li>
+</ol>
+<ul>
+<li>由于所选加密算法可能是块加密，当最后一块长度不足时就需要填充 (padding)，附上填充长度 (Pad length) 方便解包时顺利找出用来填充的那一段数据。</li>
+<li>Next header 用来标明被封装的原报文的协议类型，例如 4 (= IP)。
+<img src="file:///e:/学习/大三上/信息安全与技术/hw5/img/3.png" alt=""></li>
+</ul>
+<ol start="3">
+<li>根据选择的加密算法，将原IP数据报文和ESP尾作为一个整体加密。</li>
+<li>在把上一步整体加密的数据前添加一个 ESP 头（ESP header），ESP header由 SPI 和 Seq# 两部分组成。加密数据与 ESP header 合称为 “Enchilada”，构成认证部分Authenticated Fields。注意到被封装的原报文的协议类型受到保护，由加密的 ESP trailer 的 Next header 声明，而不出现在未加密的 ESP header 中。</li>
+<li>根据上一步得到的Enchilada，计算一个32位整数倍的完整性度量值 (消息认证码 MAC)，并附在ESP报文的尾部，构成 ESP Auth Data。验证算法由SA给出。</li>
+<li>在报文头部添加修改后的原IP头。</li>
+</ol>
+<h2 id="%E6%8B%86%E5%8C%85%E8%BF%87%E7%A8%8B">拆包过程</h2>
+<ol>
+<li>接收方收到 IP 报文后，发现协议类型是50，表明这是一个<strong>ESP包</strong>。而且还会通过SA知道其加密算法和解密密钥、度量算法和认证密钥。</li>
+<li>查看 ESP Auth Data，计算 “Enchilada” 部分的摘要，两相对比来对Enchilada进行<strong>完整性验证</strong>，确保收到的数据是无损失的，最后丢弃该部分。</li>
+<li>查看 ESP 头 Seq# 中的<strong>序列号</strong>，确定数据是最新的，这是为了<strong>防止回放攻击</strong>，最后丢弃该部分。</li>
+<li>根据 SA 所提供的加密算法和密钥，<strong>解密报文</strong>，得到原 IP 数据报文和 ESP 尾。</li>
+<li>通过分析 ESP 尾部中的填充长度信息<strong>删除填充</strong>得到原 IP 数据报文。</li>
+<li>最后修改收到的IP报文头的协议类型为ESP尾部中的Next Header标明的协议类型得到<strong>原IP头</strong>，与原IP数据报文拼接得到原 IP 报文，根据原 IP 报文目的地址进行转发。</li>
+</ol>
+
+</body>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });</script>
+</html>

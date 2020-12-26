@@ -1,0 +1,808 @@
+<!DOCTYPE html><html><head>
+      <title>report</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\13646\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="hmac-md5-%E7%AE%97%E6%B3%95%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A">HMAC-MD5 &#x7B97;&#x6CD5;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x62A5;&#x544A;</h1>
+
+<h2 class="mume-header" id="md5-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E6%A6%82%E8%BF%B0">MD5 &#x7B97;&#x6CD5;&#x539F;&#x7406;&#x6982;&#x8FF0;</h2>
+
+<p>&#x5BC6;&#x7801;&#x6563;&#x5217;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x6D88;&#x606F;&#x6620;&#x5C04;&#x5230;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x5B57;&#x6307;&#x7EB9;&#xFF08;&#x62A5;&#x6587;&#x6458;&#x8981;&#xFF09;&#x3002;</p>
+<ul>
+<li>&#x8F93;&#x5165;&#xFF1A;&#x4EFB;&#x610F;&#x4E0D;&#x5B9A;&#x957F;&#x5EA6;&#x4FE1;&#x606F;</li>
+<li>&#x8F93;&#x51FA;&#xFF1A;&#x4EE5;512-bit&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x751F;&#x6210;&#x56DB;&#x4E2A;32-bit&#x6570;&#x636E;&#xFF0C;&#x6700;&#x540E;&#x8054;&#x5408;&#x8F93;&#x51FA;&#x56FA;&#x5B9A;128-bit&#x7684;&#x4FE1;&#x606F;&#x6458;&#x8981;</li>
+<li>&#x603B;&#x63A7;&#x6D41;&#x7A0B;:
+<ul>
+<li>&#x4EE5;512-bit&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x6BCF;&#x4E00;&#x5206;&#x7EC4; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>q</mi></msub><mo stretchy="false">(</mo><mi>q</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><mi>L</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Y_q (q = 0, 1, &#x2026;, L-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">q</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x2026;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>&#x7ECF;&#x8FC7;4&#x4E2A;&#x5FAA;&#x73AF;&#x7684;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF0C;&#x8868;&#x793A;&#x4E3A;&#xFF1A;<pre data-role="codeBlock" data-info class="language-"><code>CV0 = IV
+CVi = HMD5(CVi-1 , Yi-1), i = 1, &#x2026;, L.
+</code></pre></li>
+<li>&#x8F93;&#x51FA;&#x7ED3;&#x679C; hash &#x503C;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>D</mi><mo>=</mo><mi>C</mi><msub><mi>V</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">MD = CV_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">L</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+</ul>
+</li>
+<li>&#x57FA;&#x672C;&#x8FC7;&#x7A0B;&#xFF1A;
+<ul>
+<li>&#x5206;&#x5757;<br>
+&#x6BCF;512&#x4F4D;&#x6570;&#x636E;&#x5206;&#x4E3A;1&#x5757;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;&#x538B;&#x7F29;&#x8FC7;&#x7A0B;&#x4E2D;&#x7D2F;&#x8BA1;&#x539F;&#x59CB;&#x6D88;&#x606F;&#x6570;&#x636E;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;64&#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x578B;&#x53D8;&#x91CF;<code>count</code>&#x4E2D;&#x3002;</li>
+<li>&#x586B;&#x5145;</li>
+</ul>
+<ol>
+<li>&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x5757;&#x586B;&#x5145;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;<code>100&#x2026;0</code>&#xFF0C;&#x7559;&#x4E0B;&#x672B;&#x5C3E;6&#x4F4D;&#x3002;</li>
+<li>&#x586B;&#x5145;&#x4F4D;&#x6570;&#x5FC5;&#x987B;&#x5728; [1, 512] &#x8303;&#x56F4;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x8DB3;&#x4EE5;&#x653E;&#x4E0B;&#x4E00;&#x4F4D;&#x586B;&#x5145;&#x4F4D;&#xFF0C;&#x586B;&#x5145;&#x4E24;&#x5757;&#x3002;</li>
+<li>&#x6700;&#x540E;&#x5C06; <code>count</code>&#x7684;&#x4F4E;64&#x4F4D;&#x6309;little-endian&#x8F6C;&#x79FB;&#x6210;8&#x4E2A;&#x5B57;&#x8282;&#x987A;&#x5E8F;&#x586B;&#x5145;&#x5165;&#x672B;&#x5C3E;64&#x4F4D;&#x3002;</li>
+<li>&#x5BF9;&#x586B;&#x5145;&#x540E;&#x5F62;&#x6210;&#x7684;&#x5757;&#x7EE7;&#x7EED;&#x538B;&#x7F29;&#x3002;</li>
+</ol>
+<ul>
+<li>&#x7F13;&#x51B2;&#x533A;&#x521D;&#x59CB;&#x5316;<br>
+&#x6BCF;&#x4E2A;&#x5E26;4&#x4E2A;&#x5B57;&#x8282; (32-bit) &#x7684;4&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x6784;&#x6210;&#x5411;&#x91CF; (A, B, C, D)&#xFF0C;&#x4E5F;&#x79F0;MD&#x7F13;&#x51B2;&#x533A;&#x3002;<br>
+&#x521D;&#x59CB;&#x5316;&#x5982;&#x4E0B;&#xFF1A;<pre data-role="codeBlock" data-info class="language-"><code>A = 0x67452301
+B = 0xEFCDAB89
+C = 0x98BADCFE
+D = 0x10325476
+</code></pre></li>
+<li>&#x5FAA;&#x73AF;&#x538B;&#x7F29;<br>
+&#x5BF9;&#x6BCF;&#x4E2A;&#x5757;&#x6267;&#x884C;4&#x4E2A;&#x5FAA;&#x73AF;&#x7684;&#x538B;&#x7F29;&#x7B97;&#x6CD5;,&#x6BCF;&#x8F6E;&#x5FAA;&#x73AF;&#x5206;&#x522B;&#x56FA;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x751F;&#x6210;&#x51FD;&#x6570;<code>F, G, H, I</code>,&#x7ED3;&#x5408;&#x6307;&#x5B9A;&#x7684;T&#x8868;&#x5143;&#x7D20;<code>T[]</code>&#x548C;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;&#x4E0D;&#x540C;&#x90E8;&#x5206;<code>X[]</code>&#x505A;16&#x6B21;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;,&#x751F;&#x6210;&#x4E0B;&#x4E00;&#x8F6E;&#x5FAA;&#x73AF;&#x7684;&#x8F93;&#x5165;&#x3002;<br>
+&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x5904;&#x7406;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;32&#x4F4D;&#x5B57;,&#x6BCF;&#x8F6E;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;
+<ul>
+<li>&#x5BF9; A &#x8FED;&#x4EE3;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&#x2190;</mo><mi>b</mi><mo>+</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>g</mi><mo stretchy="false">(</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo><mo>+</mo><mi>X</mi><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo><mo>+</mo><mi>T</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>&lt;</mo><mo>&lt;</mo><mo>&lt;</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a \leftarrow b + ((a + g(b, c, d) + X[k] + T[i]) &lt;&lt;&lt; s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2190;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x7F13;&#x51B2;&#x533A; (A, B, C, D) &#x4F5C;&#x5FAA;&#x73AF;&#x7F6E;&#x6362;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo separator="true">,</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x2190;</mo><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(B, C, D, A) \leftarrow (A, B, C, D)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2190;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>&#x5F97;&#x51FA;&#x7ED3;&#x679C;<br>
+&#x5BF9;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x503C;&#x6309;little-endian&#x8F6C;&#x6362;&#x4E3A;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x987A;&#x5E8F;&#x8F93;&#x51FA;&#x5176;8&#x4E2A;16&#x8FDB;&#x5236;&#x6570;&#x7B26;&#x53F7;&#x3002;&#x5BC4;&#x5B58;&#x5668; A, B, C, D &#x8054;&#x5408;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x662F;32&#x4E2A;16&#x8FDB;&#x5236;&#x6570;&#x7B26;&#x53F7;</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="hmac-%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E6%A6%82%E8%BF%B0">HMAC &#x7B97;&#x6CD5;&#x539F;&#x7406;&#x6982;&#x8FF0;</h2>
+
+<p>&#x5229;&#x7528;&#x5BC6;&#x7801;&#x6563;&#x5217;&#x51FD;&#x6570;&#xFF08;MD5&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x4E3A;&#x6D88;&#x606F;&#x751F;&#x6210;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6D88;&#x606F;&#x8BA4;&#x8BC1;&#x7801;&#x3002;<br>
+<strong>&#x7B97;&#x6CD5;&#x7ED3;&#x6784;</strong>&#xFF1A;<br>
+M &#x2013; message input to HMAC<br>
+H &#x2013; embedded hash function<br>
+b &#x2013; length (bits) of input block(MD5:b=64)<br>
+k &#x2013; secrete key, |k| <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2264;</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">&#x2264;</span></span></span></span> b<br>
+n &#x2013; length of hash code<br>
+ipad &#x2013; 00110110 &#x91CD;&#x590D;<code>b/8</code>&#x6B21; b&#x4F4D;<br>
+opad &#x2013; 01011010 &#x91CD;&#x590D;<code>b/8</code>&#x6B21; b&#x4F4D;<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">K^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span> &#x2013; &#x5BF9;&#x5171;&#x4EAB;&#x5BC6;&#x94A5;k&#x53F3;&#x8FB9;&#x8865;0 &#x751F;&#x6210;&#x4E00;&#x4E2A;b&#x4F4D;&#x7684;&#x6570;&#x636E;&#x5757;<br>
+&#x5982;&#x679C;kLen&gt;b&#xFF0C;&#x91CD;&#x8BBE;&#x4E3A;key=MD5(key)<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>M</mi><mi>A</mi><msub><mi>C</mi><mi>k</mi></msub><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><msup><mi>K</mi><mo>+</mo></msup><mo>&#x2A01;</mo><mi>o</mi><mi>p</mi><mi>a</mi><mi>d</mi><mo stretchy="false">)</mo><mtext>&#x2016;</mtext><mi>H</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><msup><mi>K</mi><mo>+</mo></msup><mo>&#x2A01;</mo><mi>i</mi><mi>p</mi><mi>a</mi><mi>d</mi><mo stretchy="false">)</mo><mtext>&#x2016;</mtext><mi>M</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">HMAC_k = H(( K^+ \bigoplus opad ) &#x2016; H(( K^+ \bigoplus ipad ) &#x2016; M ))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">A</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">&#x2A01;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">&#x2A01;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><msup><mi>K</mi><mo>+</mo></msup><mo>&#x2A01;</mo><mi>i</mi><mi>p</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">S_i=K^+ \bigoplus ipad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.021341em;vertical-align:-0.25001em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">&#x2A01;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">K^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>&#x4E0E; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>p</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">ipad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span> &#x4F5C; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mi>O</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">XOR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mtext>&#x2016;</mtext><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(S_i &#x2016; M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span><br>
+&#x5BF9;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mtext>&#x2016;</mtext><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(S_i &#x2016; M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>&#x8FDB;&#x884C;HASH&#x538B;&#x7F29;&#xFF08;MD5&#xFF09;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><msup><mi>K</mi><mo>+</mo></msup><mo>&#x2A01;</mo><mi>o</mi><mi>p</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">S_0=K^+ \bigoplus opad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.021341em;vertical-align:-0.25001em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">&#x2A01;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">K^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>&#x4E0E; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mi>p</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">opad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span> &#x4F5C; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mi>O</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">XOR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>M</mi><mi>A</mi><msub><mi>C</mi><mi>k</mi></msub><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><msub><mi>S</mi><mn>0</mn></msub><mtext>&#x2016;</mtext><mi>H</mi><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mtext>&#x2016;</mtext><mi>M</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">HMAC_k = H(S_0 &#x2016; H(S_i &#x2016; M ))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">A</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>
+&#x5BF9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>o</mi></msub><mtext>&#x2016;</mtext><mi>H</mi><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mtext>&#x2016;</mtext><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_o &#x2016; H(S_i &#x2016; M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2016;</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> &#x8FDB;&#x884C;HASH&#x538B;&#x7F29;&#xFF08;MD5&#xFF09;</li>
+</ul>
+<h2 class="mume-header" id="%E6%80%BB%E4%BD%93%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">&#x603B;&#x4F53;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;</h2>
+
+<p>&#x5206;&#x4E3A;&#x4E94;&#x4E2A;&#x6587;&#x4EF6;</p>
+<ul>
+<li><code>md5.h</code> &#x5B9A;&#x4E49;&#x4E86;MD5&#x4E0A;&#x4E0B;&#x6587;&#x7C7B;&#x548C;MD5&#x64CD;&#x4F5C;&#x51FD;&#x6570;</li>
+<li><code>md5.c</code> &#x5B9E;&#x73B0;&#x4E86;MD5&#x64CD;&#x4F5C;&#x51FD;&#x6570;</li>
+<li><code>hmac_md5.h</code> &#x5B9A;&#x4E49;&#x4E86;hmac_md5&#x51FD;&#x6570;</li>
+<li><code>hmac_md5.c</code> &#x5B9E;&#x73B0;&#x4E86;hmac_md5&#x51FD;&#x6570;</li>
+<li><code>main.c</code> &#x6D4B;&#x8BD5;MD5,hmac_md5&#x7684;&#x6709;&#x6548;&#x6027;&#x6587;&#x4EF6;&#xFF0C;&#x6765;&#x6E90;&#x4E8E;<code>RCF1321</code>,<code>RCF2104</code></li>
+</ul>
+<h3 class="mume-header" id="md5">MD5</h3>
+
+<p>&#x53C2;&#x8003; <code>RFC 1321</code>&#x534F;&#x8BAE;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;<br>
+&#x5982;&#x7B97;&#x6CD5;&#x539F;&#x7406;&#x6982;&#x8FF0;&#x6240;&#x8FF0;&#xFF0C;&#x6574;&#x4E2A;&#x7B97;&#x6CD5;&#x5206;&#x4E3A;&#x56DB;&#x4E2A;&#x90E8;&#x5206;</p>
+<ul>
+<li>&#x5206;&#x5757;</li>
+<li>&#x586B;&#x5145;</li>
+<li>&#x5FAA;&#x73AF;&#x538B;&#x7F29;</li>
+<li>&#x7F13;&#x51B2;&#x533A;&#x521D;&#x59CB;&#x5316;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">void</span> <span class="token function">md5_digest</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> input<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> len<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> output<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	md5_ctx_t ctx<span class="token punctuation">;</span>
+
+	<span class="token function">md5_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ctx<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x521D;&#x59CB;&#x5316;</span>
+	<span class="token function">md5_update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ctx<span class="token punctuation">,</span> input<span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x5206;&#x5757;</span>
+	<span class="token function">md5_final</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ctx<span class="token punctuation">,</span> output<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x586B;&#x5145;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x5176;&#x4E2D;&#xFF0C;&#x5FAA;&#x73AF;&#x538B;&#x7F29;&#x5185;&#x5D4C;&#x5728;&#x5206;&#x5757;&#x4E0E;&#x586B;&#x5145;&#x4E2D;&#x3002;</p>
+<h3 class="mume-header" id="hmac">HMAC</h3>
+
+<p>&#x53C2;&#x8003;<code>RFC 2104</code>&#x534F;&#x8BAE;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;</p>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">/*k-&#x5BC6;&#x94A5;
+kLen-&#x5BC6;&#x94A5;&#x957F;&#x5EA6;
+message-&#x539F;&#x6587;
+mLen-&#x539F;&#x6587;&#x957F;&#x5EA6;
+out- &#x6D88;&#x606F;&#x6458;&#x8981;
+*/</span>
+<span class="token keyword">void</span> <span class="token function">hmac_md5</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> k<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> kLen<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> message<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> mLen<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="%E6%A8%A1%E5%9D%97%E5%88%86%E8%A7%A3">&#x6A21;&#x5757;&#x5206;&#x89E3;</h2>
+
+<h3 class="mume-header" id="md5-1">MD5</h3>
+
+<p>&#x5728;<code>md5.h</code>&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;md5&#x7B97;&#x6CD5;&#x7684;&#x4E09;&#x4E2A;&#x63A5;&#x53E3;&#x51FD;&#x6570;</p>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//&#x521D;&#x59CB;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x7ED3;&#x6784;&#x4F53;&#x5F00;&#x59CB;&#x4E00;&#x4E2A;MD5&#x64CD;&#x4F5C;</span>
+<span class="token keyword">void</span> <span class="token function">md5_init</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8BA1;&#x7B97;&#x9664;&#x6700;&#x540E;&#x586B;&#x5145;&#x5206;&#x7EC4;&#x5916;&#x7684;&#x5206;&#x7EC4;&#x7684;&#x6458;&#x8981;</span>
+<span class="token keyword">void</span> <span class="token function">md5_update</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> input <span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> inputLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8BA1;&#x7B97;&#x6700;&#x540E;&#x586B;&#x5145;&#x5206;&#x7EC4;&#x7684;&#x6458;&#x8981;&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;HASH&#x503C;</span>
+<span class="token keyword">void</span> <span class="token function">md5_final</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> digest<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h4 class="mume-header" id="%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%9D%E5%A7%8B%E5%8C%96">&#x7F13;&#x51B2;&#x533A;&#x521D;&#x59CB;&#x5316;</h4>
+
+<p>&#x5BC4;&#x5B58;&#x5668;&#x503C;&#x521D;&#x59CB;&#x5316;&#x4E3A;<code>IV</code>&#xFF0C;&#x539F;&#x59CB;&#x6D88;&#x606F;&#x6570;&#x636E;&#x5B57;&#x8282;&#x6570;<code>count</code>&#x521D;&#x59CB;&#x5316;&#x4E3A;0</p>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">void</span> <span class="token function">md5_init</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//&#x521D;&#x59CB;&#x5316;&#x5BC4;&#x5B58;&#x5668;</span>
+	ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x67452301</span><span class="token punctuation">;</span>
+	ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xEFCDAB89</span><span class="token punctuation">;</span>
+	ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x98BADCFE</span><span class="token punctuation">;</span>
+	ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x10325476</span><span class="token punctuation">;</span>
+	ctx<span class="token operator">-&gt;</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="%E5%88%86%E5%9D%97">&#x5206;&#x5757;</h4>
+
+<ul>
+<li>&#x6BCF;512&#x4F4D;&#x6570;&#x636E;&#x5206;&#x4E3A;1&#x5757;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;&#x538B;&#x7F29;&#x8FC7;&#x7A0B;&#x4E2D;&#x7D2F;&#x8BA1;&#x539F;&#x59CB;&#x6D88;&#x606F;&#x6570;&#x636E;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;64&#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x578B;&#x53D8;&#x91CF;<code>count</code>&#x4E2D;&#x3002;</li>
+<li>&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x4FDD;&#x5B58;&#x4E0D;&#x8DB3;&#x4E00;&#x4E2A;&#x5757;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">void</span> <span class="token function">md5_update</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> input<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> inputLen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> index <span class="token operator">=</span> ctx<span class="token operator">-&gt;</span>count <span class="token operator">%</span> <span class="token number">64</span><span class="token punctuation">;</span><span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x6709;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> partLen <span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">-</span> index<span class="token punctuation">;</span><span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x8FD8;&#x80FD;&#x5BB9;&#x7EB3;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>inputLen <span class="token operator">&gt;=</span> partLen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//&#x586B;&#x6EE1;&#x7F13;&#x51B2;&#x533A;&#x5269;&#x4F59;&#x90E8;&#x5206;&#x5E76;&#x8BA1;&#x7B97;&#x6458;&#x8981;</span>
+		<span class="token function">memcpy</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>buffer <span class="token operator">+</span> index<span class="token punctuation">,</span> input<span class="token punctuation">,</span> partLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">md5_transform</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">,</span> ctx<span class="token operator">-&gt;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//&#x5FAA;&#x73AF;&#x5904;&#x7406;&#x8F93;&#x5165;&#x4E2D;&#x95F4;&#x7684;&#x6574;&#x5757;&#x90E8;&#x5206;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> partLen<span class="token punctuation">;</span> i <span class="token operator">+</span> <span class="token number">63</span> <span class="token operator">&lt;</span> inputLen<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token function">md5_transform</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">,</span> input<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//&#x5C06;&#x8F93;&#x5165;&#x5269;&#x4F59;&#x90E8;&#x5206;&#x586B;&#x5165;&#x7F13;&#x51B2;&#x533A;</span>
+		<span class="token function">memcpy</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>buffer<span class="token punctuation">,</span> input<span class="token operator">+</span>i<span class="token punctuation">,</span> inputLen<span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token function">memcpy</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>buffer <span class="token operator">+</span> index<span class="token punctuation">,</span> input<span class="token punctuation">,</span> inputLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	ctx<span class="token operator">-&gt;</span>count <span class="token operator">+=</span> inputLen<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="%E5%A1%AB%E5%85%85">&#x586B;&#x5145;</h4>
+
+<ul>
+<li>&#x5BF9;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x5269;&#x4F59;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x586B;&#x5145;&#xFF0C;&#x5E76;&#x628A;count&#x586B;&#x5165;&#x672B;&#x5C3E;64&#x4F4D;&#x3002;</li>
+<li>&#x8BA1;&#x7B97;&#x586B;&#x5145;&#x540E;&#x7684;&#x5757;&#x7684;&#x6458;&#x8981;&#xFF0C;&#x5F97;&#x51FA;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">void</span> <span class="token function">md5_final</span><span class="token punctuation">(</span>md5_ctx_t<span class="token operator">*</span> ctx<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> digest<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> index <span class="token operator">=</span> ctx<span class="token operator">-&gt;</span>count <span class="token operator">%</span> <span class="token number">64</span><span class="token punctuation">;</span><span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x6709;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> partLen <span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">-</span> index<span class="token punctuation">;</span><span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x8FD8;&#x80FD;&#x5BB9;&#x7EB3;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> pi <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+	<span class="token comment">//&#x4E0D;&#x8DB3;&#x4EE5;&#x653E;&#x4E0B;&#x4E00;&#x4F4D;&#x586B;&#x5145;&#x4F4D;&#xFF0C;&#x586B;&#x5145;&#x4E24;&#x5757;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&gt;=</span> <span class="token number">56</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">memcpy</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>buffer <span class="token operator">+</span> index<span class="token punctuation">,</span> PADDING<span class="token punctuation">,</span> partLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		pi <span class="token operator">+=</span> partLen<span class="token punctuation">;</span>
+		<span class="token function">md5_transform</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">,</span> ctx<span class="token operator">-&gt;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//&#x586B;&#x5145;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;</span>
+	<span class="token function">memcpy</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>buffer <span class="token operator">+</span> index<span class="token punctuation">,</span> PADDING<span class="token operator">+</span>pi<span class="token punctuation">,</span> <span class="token number">56</span><span class="token operator">-</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x5C06; count &#x7684;&#x4F4E;64&#x4F4D;&#x6309; little-endian &#x8F6C;&#x79FB;&#x6210;8&#x4E2A;&#x5B57;&#x8282;&#x987A;&#x5E8F;&#x586B;&#x5145; </span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		ctx<span class="token operator">-&gt;</span>buffer<span class="token punctuation">[</span><span class="token number">56</span> <span class="token operator">+</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>count<span class="token operator">*</span><span class="token number">8</span> <span class="token operator">&gt;&gt;</span> i <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7531;&#x4E8E;count&#x662F;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x4F4D;&#x6570;&#x9700;&#x8981;*8</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//&#x8BA1;&#x7B97;&#x6700;&#x540E;&#x4E00;&#x5757;&#x7684;&#x6458;&#x8981;</span>
+	<span class="token function">md5_transform</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">,</span> ctx<span class="token operator">-&gt;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x5BF9;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x503C;&#x6309;little-endian&#x8F6C;&#x6362;&#x4E3A;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x603B;&#x5171;16&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5F97;&#x51FA;&#x7ED3;&#x679C;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			digest<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">4</span> <span class="token operator">+</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span>ctx<span class="token operator">-&gt;</span>CV<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;&gt;</span> j <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="%E5%BE%AA%E7%8E%AF%E5%8E%8B%E7%BC%A9">&#x5FAA;&#x73AF;&#x538B;&#x7F29;</h4>
+
+<p>&#x5BF9;&#x6BCF;&#x4E2A;&#x5757;&#x6267;&#x884C;4&#x4E2A;&#x5FAA;&#x73AF;&#x7684;&#x538B;&#x7F29;&#x7B97;&#x6CD5;,&#x6BCF;&#x8F6E;&#x5FAA;&#x73AF;&#x5206;&#x522B;&#x56FA;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x751F;&#x6210;&#x51FD;&#x6570;<code>F, G, H, I</code>,&#x7ED3;&#x5408;&#x6307;&#x5B9A;&#x7684;T&#x8868;&#x5143;&#x7D20;<code>T[]</code>&#x548C;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;&#x4E0D;&#x540C;&#x90E8;&#x5206;<code>X[]</code>&#x505A;16&#x6B21;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;,&#x751F;&#x6210;&#x4E0B;&#x4E00;&#x8F6E;&#x5FAA;&#x73AF;&#x7684;&#x8F93;&#x5165;&#x3002;<br>
+&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x5904;&#x7406;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;32&#x4F4D;&#x5B57;,&#x6BCF;&#x8F6E;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9; A &#x8FED;&#x4EE3;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&#x2190;</mo><mi>b</mi><mo>+</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>g</mi><mo stretchy="false">(</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo><mo>+</mo><mi>X</mi><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo><mo>+</mo><mi>T</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>&lt;</mo><mo>&lt;</mo><mo>&lt;</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a \leftarrow b + ((a + g(b, c, d) + X[k] + T[i]) &lt;&lt;&lt; s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2190;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x7F13;&#x51B2;&#x533A; (A, B, C, D) &#x4F5C;&#x5FAA;&#x73AF;&#x7F6E;&#x6362;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo separator="true">,</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x2190;</mo><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(B, C, D, A) \leftarrow (A, B, C, D)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2190;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x5206;&#x7EC4;&#x7684;&#x6458;&#x8981;</span>
+<span class="token keyword">void</span> <span class="token function">md5_transform</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> CV<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> Y<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">int</span> i<span class="token punctuation">,</span> j <span class="token punctuation">,</span>t<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> a <span class="token operator">=</span> CV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b <span class="token operator">=</span> CV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c <span class="token operator">=</span> CV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> d <span class="token operator">=</span> CV<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//4&#x8F6E;&#x5FAA;&#x73AF;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//16&#x8F6E;&#x8FED;&#x4EE3;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">16</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">int</span> k <span class="token operator">=</span> X<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token comment">//&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x5904;&#x7406;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;32&#x4F4D;&#x5B57;</span>
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">for</span> <span class="token punctuation">(</span>t <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> t <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> t<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				y <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span><span class="token punctuation">)</span>Y<span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">*</span>k<span class="token operator">+</span>t<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>t <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token comment">//&#x5BF9; A &#x8FED;&#x4EE3;</span>
+			a<span class="token operator">=</span> b <span class="token operator">+</span> <span class="token function">ROTATE_LEFT</span><span class="token punctuation">(</span>a <span class="token operator">+</span> g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span> <span class="token operator">+</span> y <span class="token operator">+</span> T<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> S<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//&#x7F13;&#x51B2;&#x533A;&#x4F5C;&#x5FAA;&#x73AF;&#x7F6E;&#x6362;</span>
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> temp <span class="token operator">=</span> a<span class="token punctuation">;</span>
+			a <span class="token operator">=</span> d<span class="token punctuation">;</span>
+			d <span class="token operator">=</span> c<span class="token punctuation">;</span>
+			c <span class="token operator">=</span> b<span class="token punctuation">;</span>
+			b <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	CV<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+=</span> a<span class="token punctuation">;</span>
+	CV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> b<span class="token punctuation">;</span>
+	CV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+=</span> c<span class="token punctuation">;</span>
+	CV<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+=</span> d<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="hmac-md5">HMAC-MD5</h3>
+
+<p>&#x4E00;&#x4E2A;&#x603B;&#x63A7;&#x51FD;&#x6570;&#x3002;</p>
+<ul>
+<li>&#x5BC6;&#x94A5;&#x957F;&#x5EA6;&#x82E5;&#x5927;&#x4E8E;64&#x5B57;&#x8282;&#xFF0C;&#x9996;&#x5148;&#x7528;&#x6563;&#x5217;&#x51FD;&#x6570;H&#x4F5C;&#x7528;&#x4E8E;&#x5B83;&#xFF0C;&#x7136;&#x540E;&#x7528;H&#x8F93;&#x51FA;&#x7684;16&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x5728;HMAC&#x4E2D;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x7684;&#x5BC6;&#x94A5;</li>
+<li>&#x5728;&#x5BC6;&#x94A5;K&#x540E;&#x8865;0&#x521B;&#x5EFA;&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;&#x6570;&#x636E;&#x5757;</li>
+<li>&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x5757;&#x4E0E;ipad&#x8FDB;&#x884C;&#x5F02;&#x6216;&#x8FD0;&#x7B97;</li>
+<li>&#x4E0A;&#x4E00;&#x6B65;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x6570;&#x636E;&#x6D41;message&#x8FDB;&#x884C;&#x8FDE;&#x63A5;</li>
+<li>&#x5C06;H&#x4F5C;&#x7528;&#x4E8E;&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x6D41;&#x751F;&#x6210;H1</li>
+<li>&#x5728;&#x5BC6;&#x94A5;K&#x540E;&#x8865;0&#x521B;&#x5EFA;&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;&#x6570;&#x636E;&#x5757;</li>
+<li>&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x5757;&#x4E0E;opad&#x8FDB;&#x884C;&#x5F02;&#x6216;&#x8FD0;&#x7B97;</li>
+<li>&#x4E0A;&#x4E00;&#x6B65;&#x7684;&#x7ED3;&#x679C;&#x4E0E;H1&#x8FDB;&#x884C;&#x8FDE;&#x63A5;</li>
+<li>&#x5C06;H&#x4F5C;&#x7528;&#x4E8E;&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x8F93;&#x51FA;&#x6700;&#x7EC8;&#x7ED3;&#x679C;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">void</span> <span class="token function">hmac_md5</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> k<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> kLen<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> message<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> mLen<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> digest<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	md5_ctx_t ictx<span class="token punctuation">,</span> octx<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">char</span> key<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">char</span> S<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x5982;&#x679C;&#x5BC6;&#x94A5;&#x957F;&#x5EA6;&#x5927;&#x4E8E;64&#x5B57;&#x8282;&#xFF0C;&#x91CD;&#x8BBE;&#x4E3A;key=MD5(key)</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>kLen <span class="token operator">&gt;</span> <span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">md5_digest</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> kLen<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		k <span class="token operator">=</span> key<span class="token punctuation">;</span>
+		kLen <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//&#x5BF9;&#x5171;&#x4EAB;&#x5BC6;&#x94A5;k&#x53F3;&#x8FB9;&#x8865;0&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;&#x6570;&#x636E;&#x5757;&#xFF0C;&#x540C;&#x65F6;&#x4E0E;ipad&#x4F5C;XOR&#xFF0C;&#x751F;&#x6210;S1 </span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> kLen<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		S<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">^</span> <span class="token number">0x36</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> kLen<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">64</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		S<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x36</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//S1&#x4E0E;M&#x8FDE;&#x63A5;&#x8FDB;&#x884C;MD5&#x538B;&#x7F29;&#x751F;&#x6210;H1</span>
+	<span class="token function">md5_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ictx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ictx<span class="token punctuation">,</span> S<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ictx<span class="token punctuation">,</span> message<span class="token punctuation">,</span> mLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_final</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>ictx<span class="token punctuation">,</span> digest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">//&#x5BF9;&#x5171;&#x4EAB;&#x5BC6;&#x94A5;k&#x53F3;&#x8FB9;&#x8865;0&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;64&#x4F4D;&#x7684;&#x6570;&#x636E;&#x5757;&#xFF0C;&#x540C;&#x65F6;&#x4E0E;opad&#x4F5C;XOR&#xFF0C;&#x751F;&#x6210;S2 </span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> kLen<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		S<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">^</span> <span class="token number">0x5C</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> kLen<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">64</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		S<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x5C</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//S2&#x4E0E;H1&#x8FDE;&#x63A5;&#x8FDB;&#x884C;MD5&#x538B;&#x7F29;&#x5F97;&#x5230;&#x7ED3;&#x679C;</span>
+	<span class="token function">md5_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>octx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>octx<span class="token punctuation">,</span> S<span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>octx<span class="token punctuation">,</span> digest<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">md5_final</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>octx<span class="token punctuation">,</span> digest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;</h2>
+
+<h3 class="mume-header" id="md5-2">MD5</h3>
+
+<ul>
+<li>
+<p>&#x53D8;&#x91CF;&#x7C7B;&#x578B;</p>
+<ul>
+<li>64&#x4F4D;&#x53CC;&#x5B57; <code>unsigned long long int</code></li>
+<li>32&#x4F4D;&#x5B57; <code>unsigned long int</code></li>
+<li>8&#x4F4D;&#x5B57;&#x8282; <code>unsigned char</code></li>
+</ul>
+</li>
+<li>
+<p>&#x7ED3;&#x6784;&#x4F53;<br>
+&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;&#x7ED3;&#x6784;&#x4F53;&#x7BA1;&#x7406;MD5&#x8FD0;&#x7B97;&#x9700;&#x8981;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x3001;&#x7F13;&#x5B58;&#x548C;&#x6D88;&#x606F;&#x957F;&#x5EA6;&#x3002;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> md5_ctx <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> CV<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//&#x5BC4;&#x5B58;&#x5668;(A,B,C,D)</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>   <span class="token comment">//&#x539F;&#x59CB;&#x6D88;&#x606F;&#x6570;&#x636E;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">char</span> buffer<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>md5_ctx_t<span class="token punctuation">;</span>
+</pre><ul>
+<li>&#x6570;&#x7EC4;<br>
+&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x4FDD;&#x5B58;&#x8F6E;&#x51FD;&#x6570;<code>F, G, H, I</code>&#xFF0C;T&#x8868;&#x5143;&#x7D20;<code>T[]</code>&#x548C;&#x6D88;&#x606F;&#x5206;&#x7EC4;&#x7684;&#x4E0D;&#x540C;&#x90E8;&#x5206;<code>X[]</code>,&#x6BCF;&#x8F6E;&#x5404;&#x6B21;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;&#x91C7;&#x7528;&#x7684;&#x5DE6;&#x5FAA;&#x73AF;&#x79FB;&#x4F4D;&#x7684;&#x4F4D;&#x6570;<code>S[]</code>&#x4EE5;&#x53CA;&#x586B;&#x5145;&#x6570;&#x636E;<code>PADDING[]</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> PADDING<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0x80</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F6E;&#x51FD;&#x6570;</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> <span class="token function">F</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>b <span class="token operator">&amp;</span> c<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token operator">~</span>b <span class="token operator">&amp;</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> <span class="token function">G</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>b <span class="token operator">&amp;</span> d<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token operator">~</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> <span class="token function">H</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> b <span class="token operator">^</span> c <span class="token operator">^</span> d<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> <span class="token function">I</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> c <span class="token operator">^</span> <span class="token punctuation">(</span>b <span class="token operator">|</span> <span class="token operator">~</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token operator">*</span>g<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span> F<span class="token punctuation">,</span> G<span class="token punctuation">,</span> H<span class="token punctuation">,</span> I <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//! &#x5C06;x&#x5FAA;&#x73AF;&#x5DE6;&#x79FB;n&#x4F4D;</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ROTATE_LEFT(x, n) (((x) &lt;&lt; (n)) | ((x) &gt;&gt; (32-(n))))</span>
+
+<span class="token keyword">const</span> <span class="token keyword">int</span> X<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> 
+	<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> T<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">{</span><span class="token number">0xd76aa478</span><span class="token punctuation">,</span> <span class="token number">0xe8c7b756</span><span class="token punctuation">,</span> <span class="token number">0x242070db</span><span class="token punctuation">,</span> <span class="token number">0xc1bdceee</span><span class="token punctuation">,</span> <span class="token number">0xf57c0faf</span><span class="token punctuation">,</span> <span class="token number">0x4787c62a</span><span class="token punctuation">,</span><span class="token number">0xa8304613</span><span class="token punctuation">,</span> <span class="token number">0xfd469501</span><span class="token punctuation">,</span> <span class="token number">0x698098d8</span><span class="token punctuation">,</span> <span class="token number">0x8b44f7af</span><span class="token punctuation">,</span> <span class="token number">0xffff5bb1</span><span class="token punctuation">,</span> <span class="token number">0x895cd7be</span><span class="token punctuation">,</span><span class="token number">0x6b901122</span><span class="token punctuation">,</span> <span class="token number">0xfd987193</span><span class="token punctuation">,</span> <span class="token number">0xa679438e</span><span class="token punctuation">,</span> <span class="token number">0x49b40821</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">0xf61e2562</span><span class="token punctuation">,</span> <span class="token number">0xc040b340</span><span class="token punctuation">,</span> <span class="token number">0x265e5a51</span><span class="token punctuation">,</span> <span class="token number">0xe9b6c7aa</span><span class="token punctuation">,</span> <span class="token number">0xd62f105d</span><span class="token punctuation">,</span> <span class="token number">0x02441453</span><span class="token punctuation">,</span><span class="token number">0xd8a1e681</span><span class="token punctuation">,</span> <span class="token number">0xe7d3fbc8</span><span class="token punctuation">,</span> <span class="token number">0x21e1cde6</span><span class="token punctuation">,</span> <span class="token number">0xc33707d6</span><span class="token punctuation">,</span> <span class="token number">0xf4d50d87</span><span class="token punctuation">,</span> <span class="token number">0x455a14ed</span><span class="token punctuation">,</span><span class="token number">0xa9e3e905</span><span class="token punctuation">,</span> <span class="token number">0xfcefa3f8</span><span class="token punctuation">,</span> <span class="token number">0x676f02d9</span><span class="token punctuation">,</span> <span class="token number">0x8d2a4c8a</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">0xfffa3942</span><span class="token punctuation">,</span> <span class="token number">0x8771f681</span><span class="token punctuation">,</span> <span class="token number">0x6d9d6122</span><span class="token punctuation">,</span> <span class="token number">0xfde5380c</span><span class="token punctuation">,</span> <span class="token number">0xa4beea44</span><span class="token punctuation">,</span> <span class="token number">0x4bdecfa9</span><span class="token punctuation">,</span><span class="token number">0xf6bb4b60</span><span class="token punctuation">,</span> <span class="token number">0xbebfbc70</span><span class="token punctuation">,</span> <span class="token number">0x289b7ec6</span><span class="token punctuation">,</span> <span class="token number">0xeaa127fa</span><span class="token punctuation">,</span> <span class="token number">0xd4ef3085</span><span class="token punctuation">,</span> <span class="token number">0x04881d05</span><span class="token punctuation">,</span><span class="token number">0xd9d4d039</span><span class="token punctuation">,</span> <span class="token number">0xe6db99e5</span><span class="token punctuation">,</span> <span class="token number">0x1fa27cf8</span><span class="token punctuation">,</span> <span class="token number">0xc4ac5665</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token number">0xf4292244</span><span class="token punctuation">,</span> <span class="token number">0x432aff97</span><span class="token punctuation">,</span> <span class="token number">0xab9423a7</span><span class="token punctuation">,</span> <span class="token number">0xfc93a039</span><span class="token punctuation">,</span> <span class="token number">0x655b59c3</span><span class="token punctuation">,</span> <span class="token number">0x8f0ccc92</span><span class="token punctuation">,</span><span class="token number">0xffeff47d</span><span class="token punctuation">,</span> <span class="token number">0x85845dd1</span><span class="token punctuation">,</span> <span class="token number">0x6fa87e4f</span><span class="token punctuation">,</span> <span class="token number">0xfe2ce6e0</span><span class="token punctuation">,</span> <span class="token number">0xa3014314</span><span class="token punctuation">,</span> <span class="token number">0x4e0811a1</span><span class="token punctuation">,</span><span class="token number">0xf7537e82</span><span class="token punctuation">,</span> <span class="token number">0xbd3af235</span><span class="token punctuation">,</span> <span class="token number">0x2ad7d2bb</span><span class="token punctuation">,</span> <span class="token number">0xeb86d391</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token keyword">int</span> S<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> 
+	<span class="token punctuation">{</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">22</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">23</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">21</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="c%E8%AF%AD%E8%A8%80%E6%BA%90%E4%BB%A3%E7%A0%81">C&#x8BED;&#x8A00;&#x6E90;&#x4EE3;&#x7801;</h2>
+
+<p>&#x89C1;&#x9644;&#x4EF6;</p>
+<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%94%A8%E4%BE%8B">&#x9A8C;&#x8BC1;&#x7528;&#x4F8B;</h2>
+
+<ul>
+<li><code>main.c</code> &#x6D4B;&#x8BD5;MD5&#xFF0C;hmac_md5&#x7684;&#x6709;&#x6548;&#x6027;&#x6587;&#x4EF6;&#xFF0C;&#x6765;&#x6E90;&#x4E8E;<code>RCF1321</code>,<code>RCF2104</code></li>
+</ul>
+<h3 class="mume-header" id="test-cases-for-md5">Test Cases for MD5</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>MD5 test suite:
+MD5 (&quot;&quot;) = d41d8cd98f00b204e9800998ecf8427e
+MD5 (&quot;a&quot;) = 0cc175b9c0f1b6a831c399e269772661
+MD5 (&quot;abc&quot;) = 900150983cd24fb0d6963f7d28e17f72
+MD5 (&quot;message digest&quot;) = f96b697d7cb7938d525a2f31aaf161d0
+MD5 (&quot;abcdefghijklmnopqrstuvwxyz&quot;) = c3fcd3d76192e4007dfb496cca67e13b
+MD5 (&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;) =
+d174ab98d277d9f5a5611c2c9f419d9f
+MD5 (&quot;123456789012345678901234567890123456789012345678901234567890123456
+78901234567890&quot;) = 57edf4a22be3c955ac49da2e2107b67a
+</code></pre><h3 class="mume-header" id="test-cases-for-hmac-md5">Test Cases for HMAC-MD5</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>test_case =     1
+key =           0x0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b
+key_len =       16
+data =          &quot;Hi There&quot;
+data_len =      8
+digest =        0x9294727a3638bb1c13f48ef8158bfc9d
+
+test_case =     2
+key =           &quot;Jefe&quot;
+key_len =       4
+data =          &quot;what do ya want for nothing?&quot;
+data_len =      28
+digest =        0x750c783e6ab0b503eaa86e310a5db738
+
+test_case =     3
+key =           0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+key_len         16
+data =          0xdd repeated 50 times
+data_len =      50
+digest =        0x56be34521d144c88dbb8c733f0e8b3f6
+
+test_case =     4
+key =           0x0102030405060708090a0b0c0d0e0f10111213141516171819
+key_len         25
+data =          0xcd repeated 50 times
+data_len =      50
+digest =        0x697eaf0aca3a3aea3a75164746ffaa79
+
+test_case =     5
+key =           0x0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c
+key_len =       16
+data =          &quot;Test With Truncation&quot;
+data_len =      20
+digest =        0x56461ef2342edc00f9bab995690efd4c
+digest-96       0x56461ef2342edc00f9bab995
+
+test_case =     6
+key =           0xaa repeated 80 times
+key_len =       80
+data =          &quot;Test Using Larger Than Block-Size Key - Hash Key First&quot;
+data_len =      54
+digest =        0x6b1ab7fe4bd7bf8f0b62e6ce61b9d0cd
+
+test_case =     7
+key =           0xaa repeated 80 times
+key_len =       80
+data =          &quot;Test Using Larger Than Block-Size Key and Larger
+                Than One Block-Size Data&quot;
+data_len =      73
+digest =        0x6f630fad67cda0ee1fb1f562db3aa53e
+</code></pre><pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> md5input<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;message digest&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;12345678901234567890123456789012345678901234567890123456789012345678901234567890&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> md5expect<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;d41d8cd98f00b204e9800998ecf8427e&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;0cc175b9c0f1b6a831c399e269772661&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;900150983cd24fb0d6963f7d28e17f72&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;f96b697d7cb7938d525a2f31aaf161d0&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;c3fcd3d76192e4007dfb496cca67e13b&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;d174ab98d277d9f5a5611c2c9f419d9f&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;57edf4a22be3c955ac49da2e2107b67a&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> hmacdata<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;Hi There&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;what do ya want for nothing?&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;Test With Truncation&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;Test Using Larger Than Block-Size Key - Hash Key First&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;Test Using Larger Than Block-Size Key and Larger Than One Block-Size Data&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> dt1<span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dt2<span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        dt1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xdd</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    hmacdata<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> dt1<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        dt2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xcd</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    hmacdata<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> dt2<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> hmackey<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> temp1<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> temp2<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> temp3<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span> <span class="token number">0x01</span><span class="token punctuation">,</span><span class="token number">0x02</span><span class="token punctuation">,</span><span class="token number">0x03</span><span class="token punctuation">,</span><span class="token number">0x04</span><span class="token punctuation">,</span><span class="token number">0x05</span><span class="token punctuation">,</span><span class="token number">0x06</span><span class="token punctuation">,</span><span class="token number">0x07</span><span class="token punctuation">,</span><span class="token number">0x08</span><span class="token punctuation">,</span><span class="token number">0x09</span><span class="token punctuation">,</span><span class="token number">0x0a</span><span class="token punctuation">,</span><span class="token number">0x0b</span><span class="token punctuation">,</span><span class="token number">0x0c</span><span class="token punctuation">,</span><span class="token number">0x0d</span><span class="token punctuation">,</span><span class="token number">0x0e</span><span class="token punctuation">,</span><span class="token number">0x0f</span><span class="token punctuation">,</span><span class="token number">0x10</span><span class="token punctuation">,</span><span class="token number">0x11</span><span class="token punctuation">,</span><span class="token number">0x12</span><span class="token punctuation">,</span><span class="token number">0x13</span><span class="token punctuation">,</span><span class="token number">0x14</span><span class="token punctuation">,</span><span class="token number">0x15</span><span class="token punctuation">,</span><span class="token number">0x16</span><span class="token punctuation">,</span><span class="token number">0x17</span><span class="token punctuation">,</span><span class="token number">0x18</span><span class="token punctuation">,</span><span class="token number">0x19</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> temp4<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> temp5<span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">16</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x0b</span><span class="token punctuation">;</span>
+        temp2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xaa</span><span class="token punctuation">;</span>
+        temp4<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x0c</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">80</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp5<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xaa</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    hmackey<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp1<span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp2<span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;Jefe&quot;</span><span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp3<span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp4<span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp5<span class="token punctuation">;</span>
+    hmackey<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp5<span class="token punctuation">;</span>
+    
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token operator">*</span> hmackeyLen<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">16</span><span class="token punctuation">,</span>
+    <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token number">16</span><span class="token punctuation">,</span>
+    <span class="token number">25</span><span class="token punctuation">,</span>
+    <span class="token number">16</span><span class="token punctuation">,</span>
+    <span class="token number">80</span><span class="token punctuation">,</span>
+    <span class="token number">80</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token operator">*</span> hmacdataLen<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">8</span><span class="token punctuation">,</span>
+    <span class="token number">28</span><span class="token punctuation">,</span>
+    <span class="token number">50</span><span class="token punctuation">,</span>
+    <span class="token number">50</span><span class="token punctuation">,</span>
+    <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token number">54</span><span class="token punctuation">,</span>
+    <span class="token number">73</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> hmacexpect<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;9294727a3638bb1c13f48ef8158bfc9d&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;750c783e6ab0b503eaa86e310a5db738&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;56be34521d144c88dbb8c733f0e8b3f6&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;697eaf0aca3a3aea3a75164746ffaa79&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;56461ef2342edc00f9bab995690efd4c&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;6b1ab7fe4bd7bf8f0b62e6ce61b9d0cd&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;6f630fad67cda0ee1fb1f562db3aa53e&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">char</span> digest<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">md5_digest</span><span class="token punctuation">(</span>md5input<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>md5input<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>digest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;---------------MD5-----------------\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Test %d:\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Message : %s\n&quot;</span><span class="token punctuation">,</span>md5input<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Expected: %s\n&quot;</span><span class="token punctuation">,</span> md5expect<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Result  : &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">16</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%02x&quot;</span><span class="token punctuation">,</span> digest<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">char</span> digest<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">hmac_md5</span><span class="token punctuation">(</span>hmackey<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> hmackeyLen<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> hmacdata<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> hmacdataLen<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> digest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;---------------HMAC-----------------\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Test %d:\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Message : %s\n&quot;</span><span class="token punctuation">,</span> hmacdata<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Expected: %s\n&quot;</span><span class="token punctuation">,</span> hmacexpect<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Result  : &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">16</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%02x&quot;</span><span class="token punctuation">,</span> digest<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C">&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x7ED3;&#x679C;</h2>
+
+<p><img src="./img/1.png" alt><br>
+<img src="./img/2.png" alt></p>
+<p>&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#xFF01;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

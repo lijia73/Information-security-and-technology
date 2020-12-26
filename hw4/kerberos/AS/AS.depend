@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1607689957 source:/home/lijia/Desktop/iss/AS/des.c
+	<string.h>
+	<memory.h>
+	<stdlib.h>
+	<stdio.h>
+
+1607858564 source:/home/lijia/Desktop/iss/AS/main.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/msg.h>
+	<string.h>
+	<time.h>
+	"des.h"
+	"md5.h"
+
+1607580492 source:/home/lijia/Desktop/iss/AS/md5.c
+	<stdio.h>
+	<string.h>
+	"md5.h"
+
+1607586255 /home/lijia/Desktop/iss/AS/md5.h
+
+1607689957 /home/lijia/Desktop/iss/AS/des.h
+
